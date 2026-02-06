@@ -302,7 +302,7 @@
                     </p>
                     <div class="grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
                         <div>
-                            <h4 class="text-3xl font-bold text-white counter-animate" data-target="50" data-suffix="+">0
+                            <h4 class="text-3xl font-bold text-white counter-animate" data-target="10" data-suffix="+">0
                             </h4>
                             <p class="text-sm text-secondary mt-1">Premium Projects</p>
                         </div>
@@ -487,31 +487,31 @@
                 <!-- Project 4 -->
                 <a href="https://vazenterprises.lovable.app/" target="_blank"
                     class="group relative block rounded-xl overflow-hidden cursor-pointer fade-in-section border border-white/5">
-                <div
-                    class="group relative rounded-xl overflow-hidden cursor-pointer fade-in-section border border-white/5">
-                    <div class="h-80 w-full relative overflow-hidden">
-                        <img src="https://media.istockphoto.com/id/2162946448/photo/liquor-bottle-display-abstract.jpg?s=612x612&w=0&k=20&c=5oUaQnFlBTo7x7fspdB9ETZVC7aP8aZQgsXzTsnaLZo="
-     alt="Vaz Enterprises Premium Liquor Store Colva Goa"
-     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="group relative rounded-xl overflow-hidden cursor-pointer fade-in-section border border-white/5">
+                        <div class="h-80 w-full relative overflow-hidden">
+                            <img src="https://media.istockphoto.com/id/2162946448/photo/liquor-bottle-display-abstract.jpg?s=612x612&w=0&k=20&c=5oUaQnFlBTo7x7fspdB9ETZVC7aP8aZQgsXzTsnaLZo="
+                                alt="Vaz Enterprises Premium Liquor Store Colva Goa"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
 
+                            <div
+                                class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors duration-300">
+                            </div>
+                        </div>
                         <div
-                            class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors duration-300">
+                            class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm">
+                            <h4
+                                class="text-2xl font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                Vaz Enterprises</h4>
+                            <p
+                                class="text-secondary text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                                Liquor Store • Premium Spirits
+                                <span class="text-secondary hover:text-white transition-colors duration-300 ml-2">Visit
+                                    Website</span>
+                            </p>
                         </div>
                     </div>
-                    <div
-                        class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm">
-                        <h4
-                            class="text-2xl font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                              Vaz Enterprises</h4>
-                        <p
-                            class="text-secondary text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                            Liquor Store • Premium Spirits
-                             <span class="text-secondary hover:text-white transition-colors duration-300 ml-2">Visit
-                                Website</span>
-                        </p>
-                    </div>
-                </div>
-             </a>
+                </a>
 
                 <!-- Project 5 -->
                 <div
@@ -925,35 +925,50 @@
 
                 <!-- Form Side -->
                 <div class="w-full md:w-7/12 p-10 bg-primary">
-                    <form onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo form.');"
-                        class="space-y-6">
+                    <div id="form-status" class="hidden text-center py-10 fade-in-section">
+                        <div
+                            class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-check text-4xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                        <p class="text-gray-400 mb-6">Thank you for reaching out. We will get back to you shortly.</p>
+                        <button
+                            onclick="document.getElementById('form-status').classList.add('hidden'); document.getElementById('contact-form').classList.remove('hidden'); document.getElementById('contact-form').reset();"
+                            class="px-8 py-3 bg-transparent border border-secondary text-secondary font-bold rounded-lg hover:bg-secondary hover:text-primary transition-colors">
+                            Send Another
+                        </button>
+                    </div>
+
+                    <form id="contact-form" action="https://formspree.io/f/xgolwqlg" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label
+                                <label for="name"
                                     class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Name</label>
-                                <input type="text"
+                                <input type="text" id="name" name="name"
                                     class="w-full bg-slate-800 border-b border-gray-700 text-white focus:border-secondary outline-none py-2 transition-colors placeholder-gray-600"
                                     placeholder="John Doe" required>
                             </div>
                             <div>
-                                <label
+                                <label for="email"
                                     class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Email</label>
-                                <input type="email"
+                                <input type="email" id="email" name="email"
                                     class="w-full bg-slate-800 border-b border-gray-700 text-white focus:border-secondary outline-none py-2 transition-colors placeholder-gray-600"
                                     placeholder="john@example.com" required>
                             </div>
                         </div>
                         <div>
-                            <label
+                            <label for="message"
                                 class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Message</label>
-                            <textarea rows="4"
+                            <textarea id="message" name="message" rows="4"
                                 class="w-full bg-slate-800 border-b border-gray-700 text-white focus:border-secondary outline-none py-2 transition-colors resize-none placeholder-gray-600"
                                 placeholder="Tell us about your project..." required></textarea>
                         </div>
-                        <button type="submit"
-                            class="w-full py-3 bg-secondary text-primary font-bold rounded-lg hover:bg-white hover:text-primary transition-colors shadow-gold">
-                            Send Message
+                        <button type="submit" id="submit-btn"
+                            class="w-full py-3 bg-secondary text-primary font-bold rounded-lg hover:bg-white hover:text-primary transition-colors shadow-gold flex justify-center items-center">
+                            <span>Send Message</span>
                         </button>
+                        <p id="form-error" class="text-red-500 text-sm hidden mt-4 text-center">Oops! There was a
+                            problem submitting your form.</p>
                     </form>
                 </div>
             </div>
@@ -971,14 +986,14 @@
                     <p class="text-gray-400 text-sm mt-2">Elevating Brands Through Digital Excellence</p>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
-                            class="fab fa-instagram text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
-                            class="fab fa-twitter text-xl"></i></a>
+                    <!-- <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
+                            class="fab fa-instagram text-xl"></i></a> -->
+                    <!-- <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
+                            class="fab fa-twitter text-xl"></i></a> -->
                     <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
                             class="fab fa-linkedin-in text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
-                            class="fab fa-behance text-xl"></i></a>
+                    <!-- <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i
+                            class="fab fa-behance text-xl"></i></a> -->
                 </div>
             </div>
             <div
@@ -1090,15 +1105,52 @@
         document.querySelectorAll('.counter-animate').forEach(counter => {
             counterObserver.observe(counter);
         });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const formError = document.getElementById('form-error');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const submitBtn = document.getElementById('submit-btn');
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span>Sending...</span>';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(contactForm);
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        contactForm.classList.add('hidden');
+                        formStatus.classList.remove('hidden');
+                        contactForm.reset();
+                        formError.classList.add('hidden');
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    formError.classList.remove('hidden');
+                    formError.textContent = "Oops! There was a problem submitting your form. Please try again.";
+                } finally {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
 
 
 </html>
-
-
-
-
-
-
-
